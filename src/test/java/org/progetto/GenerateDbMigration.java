@@ -10,7 +10,7 @@ public class GenerateDbMigration {
 
     public static void main(String[] args) throws IOException {
         DbMigration d = DbMigration.create();
-        d.setPathToResources("src/main/resources");
+        d.setPathToResources(System.getProperty("user.dir") + "/Collezioni/src/main/resources");
         d.addPlatform(Platform.POSTGRES);
         d.setVersion("V1.0");
         d.setName("schema");

@@ -1,6 +1,5 @@
 package org.progetto.model.tipologiche;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.ebean.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,7 +25,6 @@ public class TipoBeybladePunte extends Model {
     private String originBeyFrom;
     @Column(nullable = false, name = "owned")
     private boolean owned;
-    @JsonBackReference
     @ManyToMany
     private List<Beyblade> beyblade = new ArrayList<>();
 

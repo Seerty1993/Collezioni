@@ -1,33 +1,33 @@
-INSERT INTO collezioni.tipo_beyblade_ratchet (id, height, bumps, weight, owned, name_ratchet)
-VALUES (1, 60, 3, 6.30, true, '3-60'),
-       (2, 80, 3, 7.10, true, '3-80'),
-       (3, 60, 4, 6.40, true, '4-60');
-
-
-INSERT INTO collezioni.tipo_beyblade_punte (id, namepoint, owned, weight, originBeyFrom)
-VALUES (1, 'Ball', true, 2.10, 'BX-03 Wizard Arrow 4-80B'),
-       (2, 'Flat', true, 2.30, 'BX-01 Dransword 3-60F');
-
-INSERT INTO collezioni.tipo_beyblade_blades
-    (id, spin, type, weight, nameblades, owned)
-VALUES (1, 'RIGHT', 'ATTACK', 34.5, 'Dran Sword', true);
-
-INSERT INTO collezioni.category (id, name_category)
-VALUES (1, 'CARDS'),
-       (2, 'BEYBLADE'),
-       (3, 'ALTRO');
-
-INSERT INTO collezioni.beyblade
-(id, "owned", wish, quantityitem, formato, ratchet_id, punta_id, blades_id, name_category, nameitem, descriptionitem,
- note)
-VALUES (1, true, false, 1, 'HASBRO', 1, 2, 1, 2, 'Dran Sword',
-        'Dran Sword is a welcome addition to any collection as it features solid attack but is generally outclassed by a lot more options specifically after Dran Sword gets worn after use. Due to the fact other releases like Phoenix Wing and other attackers not only outclass for pure attack but for other combination types, Dran Sword is a welcome addition but not a must-have currently.',
-        'ATTACCO');
-
-
-
-ALTER SEQUENCE tipo_beyblade_ratchet_id_seq RESTART WITH 4;
-ALTER SEQUENCE tipo_beyblade_punte_id_seq RESTART WITH 3;
-ALTER SEQUENCE tipo_beyblade_blades_id_seq RESTART WITH 2;
-ALTER SEQUENCE category_id_seq RESTART WITH 4;
-ALTER SEQUENCE beyblade_id_seq RESTART WITH 2;
+-- INSERT INTO collezioni.tipo_beyblade_ratchet (id, height, bumps, weight, owned, name_ratchet)
+-- VALUES (1, 60, 3, 6.30, true, '3-60'),
+--        (2, 80, 3, 7.10, true, '3-80'),
+--        (3, 60, 4, 6.40, true, '4-60');
+--
+--
+-- INSERT INTO collezioni.tipo_beyblade_punte (id, namepoint, owned, weight, originBeyFrom)
+-- VALUES (1, 'Ball', true, 2.10, 'BX-03 Wizard Arrow 4-80B'),
+--        (2, 'Flat', true, 2.30, 'BX-01 Dransword 3-60F');
+--
+-- INSERT INTO collezioni.tipo_beyblade_blades
+--     (id, spin, type, weight, nameblades, owned)
+-- VALUES (1, 'RIGHT', 'ATTACK', 34.5, 'Dran Sword', true);
+--
+-- INSERT INTO collezioni.category (id, name_category)
+-- VALUES (1, 'CARDS'),
+--        (2, 'BEYBLADE'),
+--        (3, 'ALTRO');
+--
+-- INSERT INTO collezioni.beyblade
+-- (id, "owned", wish, quantityitem, formato, ratchet_id, punta_id, blades_id, name_category, nameitem, descriptionitem,
+--  note)
+-- VALUES (1, true, false, 1, 'HASBRO', 1, 2, 1, 2, 'Dran Sword',
+--         'Dran Sword is a welcome addition to any collection as it features solid attack but is generally outclassed by a lot more options specifically after Dran Sword gets worn after use. Due to the fact other releases like Phoenix Wing and other attackers not only outclass for pure attack but for other combination types, Dran Sword is a welcome addition but not a must-have currently.',
+--         'ATTACCO');
+--
+--
+--
+-- ALTER SEQUENCE tipo_beyblade_ratchet_id_seq RESTART WITH 4;
+-- ALTER SEQUENCE tipo_beyblade_punte_id_seq RESTART WITH 3;
+-- ALTER SEQUENCE tipo_beyblade_blades_id_seq RESTART WITH 2;
+-- ALTER SEQUENCE category_id_seq RESTART WITH 4;
+-- ALTER SEQUENCE beyblade_id_seq RESTART WITH 2;

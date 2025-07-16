@@ -1,7 +1,6 @@
 package org.progetto.model;
 
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +23,6 @@ public abstract class Cards {
     @ManyToOne
     @JoinColumn(name = "name_category")
     private Category category;
-    @JsonManagedReference
     @OneToMany(mappedBy = "cards",
             cascade = CascadeType.ALL,
             orphanRemoval = true)

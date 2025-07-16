@@ -109,7 +109,7 @@ create table tipo_beyblade_ratchet (
   Height                        integer not null,
   Weight                        float not null,
   originBeyFrom                 TEXT,
-  owned                         boolean default false not null,
+  owned                         boolean not null,
   name_ratchet                  varchar(255) not null,
   constraint pk_tipo_beyblade_ratchet primary key (id)
 );

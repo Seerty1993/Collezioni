@@ -1,7 +1,5 @@
 package org.progetto.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +19,6 @@ public class Pokemon extends CollectionItem {
     @Column(name = "languageItem")
     private String language;
     @OneToMany
-    @JsonManagedReference
     private List<TipoCardsRarity> rarity;
     @Column(name = "BuyPrice")
     private Double buyPrice;
@@ -32,8 +29,6 @@ public class Pokemon extends CollectionItem {
     @Column(name = "cardNumber")
     private String cardNumber;
     @ManyToOne
-    @JsonBackReference
-//    @JoinColumn(name = "cards_id")
     private Cards cards;
 
 

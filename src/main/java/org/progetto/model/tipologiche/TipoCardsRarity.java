@@ -1,6 +1,5 @@
 package org.progetto.model.tipologiche;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +16,5 @@ public class TipoCardsRarity {
     @Column(nullable = false, name = "cards_rarity")
     private String cards_rarity;
     @ManyToOne
-    @JsonBackReference
     private Pokemon pokemon;
 }

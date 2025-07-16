@@ -24,18 +24,10 @@ public class EbeanConfig {
     public Database createDb(AgroalDataSource source, ObjectMapper mapper) {
         DatabaseConfig dbConfig = new DatabaseConfig();
         dbConfig.setDataSource(source);
-
-        // Per far generare automaticamente le tabelle da Ebean
-//        dbConfig.setDdlGenerate(true);
-//        dbConfig.setDdlRun(true);
-//        dbConfig.setDdlCreateOnly(true);
-
-
         dbConfig.setObjectMapper(mapper);
         dbConfig.setIdGeneratorAutomatic(false);
         dbConfig.setDefaultServer(true);
         dbConfig.addPackage("org.progetto.model");
-
 
         return dbConfig.build();
     }

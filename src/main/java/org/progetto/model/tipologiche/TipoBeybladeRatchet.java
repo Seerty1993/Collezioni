@@ -1,6 +1,5 @@
 package org.progetto.model.tipologiche;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.ebean.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,7 +18,7 @@ public class TipoBeybladeRatchet extends Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false, name = "Bumps")
-    private Integer nBumps;
+    private Integer bumps;
     @Column(nullable = false, name = "Height")
     private Integer height;
     @Column(nullable = false, name = "Weight")
@@ -27,12 +26,10 @@ public class TipoBeybladeRatchet extends Model {
     @Column(name = "originBeyFrom", columnDefinition = "TEXT")
     private String originBeyFrom;
     @Column(nullable = false, name = "owned")
-    private boolean owned;
+    private Boolean owned;
     @Column(nullable = false, name = "name_ratchet")
-    private String name_ratchet;
-    @JsonBackReference
+    private String nameRatchet;
     @ManyToMany
     private List<Beyblade> beyblade = new ArrayList<>();
-
 
 }
