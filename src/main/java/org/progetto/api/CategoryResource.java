@@ -6,6 +6,7 @@ import jakarta.ws.rs.*;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.progetto.dto.CategoryDTO;
+import org.progetto.dto.SimpleResultDTO;
 import org.progetto.services.CategoryService;
 
 import java.util.List;
@@ -46,8 +47,12 @@ public class CategoryResource {
     @Path("/add")
     @Operation(summary = "addCategory",
             description = "Aggiungi una nuova categoria")
-    public void addCategory(@Valid CategoryDTO category) {
-        categoryService.addCategory(category);
+    public SimpleResultDTO<CategoryDTO> addCategory(@Valid CategoryDTO category) {
+
+        return SimpleResultDTO.<CategoryDTO>builder()
+                .payload(categoryService.addCategory(category))
+                .message("Categoria aggiunta con successo con nome: " + category.getName_category())
+                .build();
     }
 
     @DELETE

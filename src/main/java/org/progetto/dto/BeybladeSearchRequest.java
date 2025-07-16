@@ -14,12 +14,12 @@ public class BeybladeSearchRequest extends SimpleSearchRequest {
 
     @QueryParam("Id")
     private Long Id;
-    @QueryParam("name")
-    private String name;
+    @QueryParam("nameitem")
+    private String nameitem;
     @QueryParam("description")
     private String description;
-    @QueryParam("quantity")
-    private Integer quantity;
+    @QueryParam("quantityitem")
+    private Integer quantityitem;
     @QueryParam("formato")
     private List<String> formato;
     @QueryParam("ratchet_id")
@@ -34,16 +34,18 @@ public class BeybladeSearchRequest extends SimpleSearchRequest {
     private Boolean wish;
     @QueryParam("category_id")
     private Integer category_id;
+    @QueryParam("note")
+    private String note;
 
     public <T> ExpressionList<T> filterBuilder(ExpressionList<T> query) {
         if (Id != null)
             query.eq("Id", Id);
-        if (name != null)
-            query.eq("name", name);
+        if (nameitem != null)
+            query.eq("nameitem", nameitem);
         if (description != null)
             query.contains("description", description + "%");
-        if (quantity != null)
-            query.eq("quantity", quantity);
+        if (quantityitem != null)
+            query.eq("quantity", quantityitem);
         if (CollectionUtils.isNotEmpty(formato))
             query.in("formato", formato);
         if (ratchet_id != null)
@@ -58,6 +60,8 @@ public class BeybladeSearchRequest extends SimpleSearchRequest {
             query.eq("wish", wish);
         if (category_id != null)
             query.eq("category.id", category_id);
+        if (note != null)
+            query.contains("note", note + "%");
 
         return super.paginationOrderAndSort(query);
     }

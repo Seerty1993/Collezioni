@@ -15,14 +15,14 @@ public abstract class CollectionItem extends Model {
     private Integer id;
     @Column(unique = true, name = "nameItem")
     private String name;
-    @Column(name = "descriptionItem")
+    @Column(name = "descriptionItem", columnDefinition = "TEXT")
     private String description;
     @Column(name = "owned")
     private boolean owned;
     @Column(name = "wish")
     private boolean wish;
     @Column(name = "quantityItem")
-    private Integer quantity;
+    private Integer quantity = 0;
 
 
 }

@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.progetto.model.Beyblade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -24,7 +27,7 @@ public class TipoBeybladePunte extends Model {
     @Column(nullable = false, name = "owned")
     private boolean owned;
     @JsonBackReference
-    @OneToOne(mappedBy = "punta")
-    private Beyblade beyblade;
+    @ManyToMany
+    private List<Beyblade> beyblade = new ArrayList<>();
 
 }

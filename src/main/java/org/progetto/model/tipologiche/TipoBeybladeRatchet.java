@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.progetto.model.Beyblade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -25,9 +28,11 @@ public class TipoBeybladeRatchet extends Model {
     private String originBeyFrom;
     @Column(nullable = false, name = "owned")
     private boolean owned;
+    @Column(nullable = false, name = "name_ratchet")
+    private String name_ratchet;
     @JsonBackReference
-    @OneToOne(mappedBy = "ratchet")
-    private Beyblade beyblade;
+    @ManyToMany
+    private List<Beyblade> beyblade = new ArrayList<>();
 
 
 }

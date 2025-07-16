@@ -1,13 +1,8 @@
 package org.progetto.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.progetto.model.Category;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Getter

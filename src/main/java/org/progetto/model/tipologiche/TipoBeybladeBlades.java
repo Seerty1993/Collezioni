@@ -9,6 +9,9 @@ import org.progetto.model.Beyblade;
 import org.progetto.model.enumModel.BeybladeSpin;
 import org.progetto.model.enumModel.BeybladeType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -30,6 +33,6 @@ public class TipoBeybladeBlades extends Model {
     @Column(nullable = false, name = "owned")
     private boolean owned;
     @JsonBackReference
-    @OneToOne(mappedBy = "blades")
-    private Beyblade beyblade;
+    @ManyToMany
+    private List<Beyblade> beyblade = new ArrayList<>();
 }

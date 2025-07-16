@@ -49,9 +49,11 @@ public class CategoryService {
         return CategoryDTO.of(entity);
     }
 
-    public void addCategory(CategoryDTO category) {
+    public CategoryDTO addCategory(CategoryDTO category) {
         try {
+            category.setName_category(category.getName_category().toUpperCase());
             db.insert(category.toEntity());
+            return category;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage() + " Categoria già presente o dati non validi");
         }

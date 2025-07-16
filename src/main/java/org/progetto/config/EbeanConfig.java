@@ -12,6 +12,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Singleton;
 
+import java.sql.SQLException;
+
 
 public class EbeanConfig {
 
@@ -21,12 +23,14 @@ public class EbeanConfig {
     @Produces
     public Database createDb(AgroalDataSource source, ObjectMapper mapper) {
         DatabaseConfig dbConfig = new DatabaseConfig();
-        dbConfig.loadFromProperties();
         dbConfig.setDataSource(source);
-        dbConfig.setDdlGenerate(true);
-        dbConfig.setDdlRun(true);
-        dbConfig.setDdlCreateOnly(true);
-        dbConfig.setDataSource(source);
+
+        // Per far generare automaticamente le tabelle da Ebean
+//        dbConfig.setDdlGenerate(true);
+//        dbConfig.setDdlRun(true);
+//        dbConfig.setDdlCreateOnly(true);
+
+
         dbConfig.setObjectMapper(mapper);
         dbConfig.setIdGeneratorAutomatic(false);
         dbConfig.setDefaultServer(true);
