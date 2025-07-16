@@ -63,9 +63,11 @@ create table tipo_beyblade_blades (
   beyblade_id                   integer,
   spin                          varchar(5) not null,
   type                          varchar(7),
+  formato                       varchar(11),
   nameBlades                    varchar(255) not null,
   constraint ck_tipo_beyblade_blades_spin check ( spin in ('RIGHT','LEFT')),
   constraint ck_tipo_beyblade_blades_type check ( type in ('ATTACK','DEFENSE','STAMINA','BALANCE')),
+  constraint ck_tipo_beyblade_blades_formato check ( formato in ('TAKARA_TOMY','HASBRO')),
   constraint uq_tipo_beyblade_blades_beyblade_id unique (beyblade_id),
   constraint pk_tipo_beyblade_blades primary key (id)
 );
@@ -76,6 +78,8 @@ create table tipo_beyblade_punte (
   originBeyFrom                 TEXT,
   owned                         boolean default false not null,
   namePoint                     varchar(255) not null,
+  formato                       varchar(11),
+  constraint ck_tipo_beyblade_punte_formato check ( formato in ('TAKARA_TOMY','HASBRO')),
   constraint pk_tipo_beyblade_punte primary key (id)
 );
 
@@ -86,7 +90,9 @@ create table tipo_beyblade_ratchet (
   Weight                        float not null,
   originBeyFrom                 TEXT,
   owned                         boolean not null,
+  formato                       varchar(11),
   name_ratchet                  varchar(255) not null,
+  constraint ck_tipo_beyblade_ratchet_formato check ( formato in ('TAKARA_TOMY','HASBRO')),
   constraint pk_tipo_beyblade_ratchet primary key (id)
 );
 

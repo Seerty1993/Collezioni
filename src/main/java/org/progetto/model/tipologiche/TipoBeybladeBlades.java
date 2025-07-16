@@ -5,11 +5,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.progetto.model.Beyblade;
+import org.progetto.model.enumModel.BeybladeFormato;
 import org.progetto.model.enumModel.BeybladeSpin;
 import org.progetto.model.enumModel.BeybladeType;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -25,6 +24,9 @@ public class TipoBeybladeBlades extends Model {
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private BeybladeType type;
+    @Column(name = "formato")
+    @Enumerated(EnumType.STRING)
+    private BeybladeFormato formato;
     @Column(name = "weight")
     private Double weight;
     @Column(nullable = false, name = "nameBlades")
