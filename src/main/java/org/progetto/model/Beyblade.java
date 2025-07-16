@@ -1,5 +1,6 @@
 package org.progetto.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,14 +24,16 @@ public class Beyblade extends CollectionItem {
     @Column(name = "formato")
     @Enumerated(EnumType.STRING)
     private BeybladeFormato formato;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<TipoBeybladeRatchet> ratchet = new ArrayList<>();
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<TipoBeybladePunte> punta = new ArrayList<>();
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<TipoBeybladeBlades> blades = new ArrayList<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JsonBackReference
+    private TipoBeybladeRatchet ratchet;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JsonBackReference
+    private TipoBeybladePunte punta;
+    @OneToOne
+    private TipoBeybladeBlades blade;
     @ManyToOne
-    @JoinColumn(name = "name_category")
+    @JsonBackReference
     private Category category;
     @Column(name = "note", columnDefinition = "TEXT")
     private String note;

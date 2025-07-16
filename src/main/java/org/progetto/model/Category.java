@@ -1,5 +1,6 @@
 package org.progetto.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.ebean.Model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,8 +25,10 @@ public class Category extends Model {
     @Column(nullable = false, name = "name_category")
     private String name_category;
     @OneToMany
+    @JsonManagedReference
     private List<Cards> cards = new ArrayList<>();
     @OneToMany
+    @JsonManagedReference
     private List<Beyblade> beyblades = new ArrayList<>();
 
 }

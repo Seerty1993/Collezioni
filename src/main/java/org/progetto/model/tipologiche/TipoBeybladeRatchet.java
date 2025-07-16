@@ -1,5 +1,7 @@
 package org.progetto.model.tipologiche;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.ebean.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,7 +31,8 @@ public class TipoBeybladeRatchet extends Model {
     private Boolean owned;
     @Column(nullable = false, name = "name_ratchet")
     private String nameRatchet;
-    @ManyToMany
+    @OneToMany
+    @JsonManagedReference
     private List<Beyblade> beyblade = new ArrayList<>();
 
 }

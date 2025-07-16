@@ -31,6 +31,6 @@ public class TipoBeybladeBlades extends Model {
     private String nameBlades;
     @Column(nullable = false, name = "owned")
     private boolean owned;
-    @ManyToMany
-    private List<Beyblade> beyblade = new ArrayList<>();
+    @OneToOne
+    private Beyblade beyblade;
 }
