@@ -1,4 +1,4 @@
-package org.progetto.dto;
+package org.progetto.dto.ratchet;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -9,9 +9,9 @@ import jakarta.inject.Inject;
 import jakarta.persistence.EntityNotFoundException;
 import org.apache.commons.lang3.StringUtils;
 import org.progetto.dto.PagedResultDTO;
-import org.progetto.dto.SearchTipoBeybladeRatchetRequestDTO;
-import org.progetto.dto.TipoBeybladeRatchetRequestDTO;
-import org.progetto.dto.TipoBeybladeRatchetResultDTO;
+import org.progetto.dto.ratchet.SearchTipoBeybladeRatchetRequestDTO;
+import org.progetto.dto.ratchet.TipoBeybladeRatchetRequestDTO;
+import org.progetto.dto.ratchet.TipoBeybladeRatchetResultDTO;
 import org.progetto.exception.ServiceException;
 import org.progetto.model.tipologiche.TipoBeybladeRatchet;
 

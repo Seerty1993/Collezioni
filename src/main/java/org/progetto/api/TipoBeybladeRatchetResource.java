@@ -7,6 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.progetto.dto.*;
+import org.progetto.dto.ratchet.SearchTipoBeybladeRatchetRequestDTO;
+import org.progetto.dto.ratchet.TipoBeybladeRatchetRequestDTO;
+import org.progetto.dto.ratchet.TipoBeybladeRatchetResultDTO;
 import org.progetto.services.TipoBeybladeRatchetService;
 
 @Path("/api/v1/tipoRatchet")

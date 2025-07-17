@@ -1,12 +1,13 @@
-package org.progetto.dto;
+package org.progetto.dto.ratchet;
 
 import jakarta.ws.rs.QueryParam;
 import lombok.Getter;
 import lombok.Setter;
+import org.progetto.dto.BaseSearchRequest;
 
 @Getter
 @Setter
-public class SearchTipoBeybladeRatchetRequestDTO extends BaseSearchRequest{
+public class SearchTipoBeybladeRatchetRequestDTO extends BaseSearchRequest {
 
     {
         SORT_FIELDS.put("Bumps", "Bumps");
