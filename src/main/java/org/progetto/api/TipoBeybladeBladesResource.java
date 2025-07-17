@@ -35,7 +35,7 @@ public class TipoBeybladeBladesResource {
     @GET
     @Path("{id}")
     @Operation(summary = "Get Blades by id", description = "API per la restituzione di una blade tramite id")
-    public TipoBeybladeBladesResultDTO findTipoBladesDetails(@PathParam("id") Integer id){
+    public TipoBeybladeBladesResultDTO findTipoBladesDetails(@PathParam("id") Long id){
         log.info("TipoBeybladeBladesResource - findTipoBladesDetails");
         return tipoBeybladeBladesService.findTipoBladesDetails(id);
     }
@@ -52,7 +52,7 @@ public class TipoBeybladeBladesResource {
     @PUT
     @Path("{id}")
     @Operation(summary = "Update Blades", description = "API per l'update delle blades")
-    public ResponseEntity<Void> updateTipoBeybladeBlades(@PathParam("id") Integer id, TipoBeybladeBladesRequestDTO request) {
+    public ResponseEntity<Void> updateTipoBeybladeBlades(@PathParam("id") Long id, TipoBeybladeBladesRequestDTO request) {
         log.info("TipoBeybladeBladesResource - updateTipoBeybladeBlades");
         tipoBeybladeBladesService.updateTipoBeybladeBlades(id, request);
         return new ResponseEntity<Void>().addMessage("Blade aggiornata con successo!");

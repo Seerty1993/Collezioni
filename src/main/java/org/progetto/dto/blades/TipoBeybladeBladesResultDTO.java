@@ -8,7 +8,7 @@ import org.progetto.model.tipologiche.TipoBeybladeBlades;
 @Setter
 public class TipoBeybladeBladesResultDTO {
 
-    private Integer id;
+    private Long id;
     private String spin;
     private String type;
     private String formato;

@@ -34,7 +34,7 @@ public class TipoBeybladeRatchetResource {
     @GET
     @Path("{id}")
     @Operation(summary = "Get Ratchet by id", description = "API per la restituzione di un ratchet tramite id")
-    public TipoBeybladeRatchetResultDTO findTipoRatchetDetails(@PathParam("id") Integer id) {
+    public TipoBeybladeRatchetResultDTO findTipoRatchetDetails(@PathParam("id") Long id) {
         log.info("TipoBeybladeRatchetResource - findTipoRatchetDetails");
         return tipoBeybladeRatchetService.findTipoRatchetDetails(id);
     }
@@ -52,7 +52,7 @@ public class TipoBeybladeRatchetResource {
     @PUT
     @Path("{id}")
     @Operation(summary = "Update Ratchet", description = "API per l'update dei ratchet")
-    public ResponseEntity<Void> updateTipoBeybladeRatchet(@PathParam("id") Integer id, TipoBeybladeRatchetRequestDTO request) {
+    public ResponseEntity<Void> updateTipoBeybladeRatchet(@PathParam("id") Long id, TipoBeybladeRatchetRequestDTO request) {
         log.info("TipoBeybladeRatchetResource - updateTipoBeybladeRatchet");
         tipoBeybladeRatchetService.updateTipoBeybladeRatchet(id, request);
         return new ResponseEntity<Void>().addMessage("Ratchet aggiornato con successo!");

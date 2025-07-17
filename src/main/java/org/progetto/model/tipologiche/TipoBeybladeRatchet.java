@@ -19,7 +19,7 @@ import java.util.List;
 public class TipoBeybladeRatchet extends Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false, name = "Bumps")
     private Integer bumps;
     @Column(nullable = false, name = "Height")

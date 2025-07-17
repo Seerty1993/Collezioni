@@ -33,7 +33,7 @@ public class TipoBeybladeRatchetService {
     }
 
 
-    public TipoBeybladeRatchet findTipoRatchetById(Integer id){
+    public TipoBeybladeRatchet findTipoRatchetById(Long id){
         return db.find(TipoBeybladeRatchet.class)
                 .where()
                 .idEq(id)
@@ -41,7 +41,7 @@ public class TipoBeybladeRatchetService {
                 .orElseThrow(() -> new EntityNotFoundException("Nessun Ratchet trovato con id " + id));
     }
 
-    public TipoBeybladeRatchetResultDTO findTipoRatchetDetails(Integer id){
+    public TipoBeybladeRatchetResultDTO findTipoRatchetDetails(Long id){
         TipoBeybladeRatchet tipoBeybladeRatchet = findTipoRatchetById(id);
         return TipoBeybladeRatchetResultDTO.fromEntity(tipoBeybladeRatchet);
     }
@@ -63,7 +63,7 @@ public class TipoBeybladeRatchetService {
     }
 
 
-    public void updateTipoBeybladeRatchet(Integer id, TipoBeybladeRatchetRequestDTO request){
+    public void updateTipoBeybladeRatchet(Long id, TipoBeybladeRatchetRequestDTO request){
         try(Transaction tx = db.beginTransaction()){
             TipoBeybladeRatchet tipoBeybladeRatchet = findTipoRatchetById(id);
             request.updateEntity(tipoBeybladeRatchet);

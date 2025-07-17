@@ -18,7 +18,7 @@ import java.util.List;
 public class TipoBeybladePunte extends Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false, name = "namePoint")
     private String namePoint;
     @Column(nullable = false, name = "weight")

@@ -17,7 +17,7 @@ import org.progetto.model.enumModel.BeybladeType;
 public class TipoBeybladeBlades extends Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false, name = "spin")
     @Enumerated(EnumType.STRING)
     private BeybladeSpin spin;

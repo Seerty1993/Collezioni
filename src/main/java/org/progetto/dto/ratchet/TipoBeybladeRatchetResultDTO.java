@@ -8,7 +8,7 @@ import org.progetto.model.tipologiche.TipoBeybladeRatchet;
 @Setter
 public class TipoBeybladeRatchetResultDTO {
 
-    private Integer id;
+    private Long id;
     private String nameRatchet;
     private Integer bumps;
     private Integer height;

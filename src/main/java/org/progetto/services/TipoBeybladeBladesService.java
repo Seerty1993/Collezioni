@@ -33,7 +33,7 @@ public class TipoBeybladeBladesService {
     }
 
 
-    public TipoBeybladeBlades getTipoBeybladeBladesById(Integer id){
+    public TipoBeybladeBlades getTipoBeybladeBladesById(Long id){
         return db.find(TipoBeybladeBlades.class)
                 .where()
                 .idEq(id)
@@ -42,7 +42,7 @@ public class TipoBeybladeBladesService {
     }
 
 
-    public TipoBeybladeBladesResultDTO findTipoBladesDetails(Integer id){
+    public TipoBeybladeBladesResultDTO findTipoBladesDetails(Long id){
         TipoBeybladeBlades blades = getTipoBeybladeBladesById(id);
         return TipoBeybladeBladesResultDTO.fromEntity(blades);
     }
@@ -70,7 +70,7 @@ public class TipoBeybladeBladesService {
     }
 
 
-    public void updateTipoBeybladeBlades(Integer id, TipoBeybladeBladesRequestDTO request){
+    public void updateTipoBeybladeBlades(Long id, TipoBeybladeBladesRequestDTO request){
         try(Transaction tx = db.beginTransaction()){
             TipoBeybladeBlades tipoBeybladeBlades = getTipoBeybladeBladesById(id);
             request.updateEntity(tipoBeybladeBlades);
