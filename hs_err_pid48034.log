@@ -1,0 +1,125 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000078fc5df70712, pid=48034, tid=48394
+#
+# JRE version: OpenJDK Runtime Environment Corretto-21.0.6.7.1 (21.0.6+7) (build 21.0.6+7-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Corretto-21.0.6.7.1 (21.0.6+7-LTS, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libonnxruntime.so+0x370712]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/lib/systemd/systemd-coredump %P %u %g %s %t 9223372036854775808 %h %d" (or dumping to /home/emanuele/StudioProjects/collezioniQuarkus/core.48034)
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/corretto/corretto-21/issues/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dquarkus-internal.serialized-app-model.path=/home/emanuele/StudioProjects/collezioniQuarkus/target/quarkus/bootstrap/dev-app-model.dat -javaagent:/home/emanuele/.m2/repository/io/quarkus/quarkus-class-change-agent/3.24.2/quarkus-class-change-agent-3.24.2.jar -XX:TieredStopAtLevel=1 -agentlib:jdwp=transport=dt_socket,address=localhost:42843,server=y,suspend=n -Djava.util.logging.manager=org.jboss.logmanager.LogManager /home/emanuele/StudioProjects/collezioniQuarkus/target/collezioni-dev.jar
+
+Host: Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz, 8 cores, 31G, Linux Mint 22.1 Xia
+Time: Thu Jul 24 15:02:16 2025 CEST elapsed time: 475.523321 seconds (0d 0h 7m 55s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000078fd080080a0):  JavaThread "Thread-96" daemon [_thread_in_native, id=48394, stack(0x000078fda0c00000,0x000078fda0d00000) (1024K)]
+
+Stack: [0x000078fda0c00000,0x000078fda0d00000],  sp=0x000078fda0cfe4c0,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libonnxruntime.so+0x370712]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  ai.onnxruntime.OrtEnvironment.close(JJ)V+0
+j  ai.onnxruntime.OrtEnvironment.access$100(JJ)V+2
+j  ai.onnxruntime.OrtEnvironment$OrtEnvCloser.run()V+8
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@21.0.6
+j  java.lang.Thread.run()V+19 java.base@21.0.6
+v  ~StubRoutines::call_stub 0x000078fdac800cc6
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x000078fbf3cdadbc
+
+Registers:
+RAX=0x0000000000000000, RBX=0x000078fbf3cdad24, RCX=0x0000000000000000, RDX=0x0000000000000001
+RSP=0x000078fda0cfe4c0, RBP=0x000078fdc0a9e820, RSI=0x0000000000000000, RDI=0x000078fbf3cdad24
+R8 =0x000078fc540568a8, R9 =0x0000000000000000, R10=0x000078fdac80f5a5, R11=0x0000000618fe8520
+R12=0x0000000000000000, R13=0x000078fc7c5a4db0, R14=0x000078fda0cfe898, R15=0x000078fd080080a0
+RIP=0x000078fc5df70712, EFLAGS=0x0000000000010206, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+XMM[0]=0x78fdac80bb17b848 0xe84e8b49f8568b49
+XMM[1]=0xc3000078fdac80bb 0x17b848e84e8b49f8
+XMM[2]=0x000065736f6c635f 0x746e656d6e6f7269
+XMM[3]=0x0000000000000000 0x0000656d6e6f7269
+XMM[4]=0x0000000000000000 0x65736f6c635f746e
+XMM[5]=0x0000000000000000 0x0000000000000000
+XMM[6]=0x0000000000000000 0x0000000000000000
+XMM[7]=0x0000000000000000 0x0000000000000000
+XMM[8]=0x000078fd08005fe0 0x000078fd08005090
+XMM[9]=0x0000000000000000 0x0000000615a3b49c
+XMM[10]=0x0000000000000000 0x0000000000000000
+XMM[11]=0x0000000000000000 0x7365612f67726f4c
+XMM[12]=0x0000000000000000 0x2020202020202020
+XMM[13]=0x0000000000000000 0x0000000000000000
+XMM[14]=0x0000000000000000 0x0000000000000000
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa0
+
+
+Register to memory mapping:
+
+RAX=0x0 is null
+RBX=0x000078fbf3cdad24 is an unknown value
+RCX=0x0 is null
+RDX=0x0000000000000001 is an unknown value
+RSP=0x000078fda0cfe4c0 is pointing into the stack for thread: 0x000078fd080080a0
+RBP=0x000078fdc0a9e820: __pthread_key_create+0x0000000000000000 in /lib/x86_64-linux-gnu/libc.so.6 at 0x000078fdc0a00000
+RSI=0x0 is null
+RDI=0x000078fbf3cdad24 is an unknown value
+R8 ={method} {0x000078fc540568a8} 'close' '(JJ)V' in 'ai/onnxruntime/OrtEnvironment'
+R9 =0x0 is null
+R10=0x000078fdac80f5a5 is at code_begin+1669 in an Interpreter codelet
+native method entry point (kind = native)  [0x000078fdac80ef20, 0x000078fdac80fef0]  4048 bytes
+R11=0x0000000618fe8520 is an oop: java.lang.Class 
+{0x0000000618fe8520} - klass: 'java/lang/Class'
+ - ---- fields (total size 17 words):
+ - private volatile transient 'classRedefinedCount' 'I' @12  0 (0x00000000)
+ - injected 'klass' 'J' @16  133029308303592 (0x000078fd4caa88e8)
+ - injected 'array_klass' 'J' @24  0 (0x0000000000000000)
+ - injected 'oop_size' 'I' @32  17 (0x00000011)
+ - injected 'static_oop_field_count' 'I' @36  5 (0x00000005)
+ - private volatile transient 'cachedConstructor' 'Ljava/lang/reflect/Constructor;' @40  null (0x00000000)
+ - private transient 'name' 'Ljava/lang/String;' @44  "ai.onnxruntime.OrtEnvironment"{0x0000000618fe85e8} (0xc31fd0bd)
+ - private transient 'module' 'Ljava/lang/Module;' @48  a 'java/lang/Module'{0x000000060e80ef58} (0xc1d01deb)
+ - private final 'classLoader' 'Ljava/lang/ClassLoader;' @52  a 'io/quarkus/bootstrap/classloading/QuarkusClassLoader'{0x000000060e80ef90} (0xc1d01df2)
+ - private transient 'classData' 'Ljava/lang/Object;' @56  null (0x00000000)
+ - private transient 'packageName' 'Ljava/lang/String;' @60  "ai.onnxruntime"{0x0000000618fe7ad0} (0xc31fcf5a)
+ - private final 'componentType' 'Ljava/lang/Class;' @64  null (0x00000000)
+ - private volatile transient 'reflectionData' 'Ljava/lang/ref/SoftReference;' @68  null (0x00000000)
+ - private volatile transient 'genericInfo' 'Lsun/reflect/generics/repository/ClassRepository;' @72  null (0x00000000)
+ - private volatile transient 'enumConstants' '[Ljava/lang/Object;' @76  null (0x00000000)
+ - private volatile transient 'enumConstantDirectory' 'Ljava/util/Map;' @80  null (0x00000000)
+ - private volatile transient 'annotationData' 'Ljava/lang/Class$AnnotationData;' @84  null (0x00000000)
+ - private volatile transient 'annotationType' 'Lsun/reflect/annotation/AnnotationType;' @88  null (0x00000000)
+ - transient 'classValueMap' 'Ljava/lang/ClassValue$ClassValueMap;' @92  null (0x00000000)
+ - injected 'protection_domain' 'Ljava/lang/Object;' @96  a 'java/security/ProtectionDomain'{0x0000000618fe8320} (0xc31fd064)
+ - injected 'signers_name' 'Ljava/lang/Object;' @100  null (0x00000000)
+ - injected 'source_file' 'Ljava/lang/Object;' @104  null (0x00000000)
+ - injected '<init_lock>' 'Ljava/lang/Object;' @108  null (0x00000000)
+ - signature: Lai/onnxruntime/OrtEnvironment;
+ - ---- static fields (5):
+ - private static final 'logger' 'Ljava/util/logging/Logger;' @112  a 'org/jboss/logmanager/Logger'{0x0000000618fee920} (0xc31fdd24)
+ - public static final 'DEFAULT_NAME' 'Ljava/lang/String;' @116  "ort-java"{0x0000000618fe85b8} (0xc31fd0b7)
+ - private static volatile 'INSTANCE' 'Lai/onnxruntime/OrtEnvironment;' @120  a 'ai/onnxruntime/OrtEnvironment'{0x000000061748fcb8} (0xc2e91f97)
+ - private static volatile 'curLogLevel' 'Lai/onnxruntime/OrtLoggingLevel;' @124  a 'ai/onnxruntime/OrtLoggingLevel'{0x000000061748ac68} (0xc2e9158d)
+ - private static volatile 'curLoggingName' 'Ljava/lang/String;' @128  "ort-java"{0x0000000618fe85b8} (0xc31fd0b7)
+R12=0x0 is null
+R13=0x000078fc7c5a4db0 points into unknown readable memory: 0x000078fbf3cdad24 | 24 ad cd f3 fb 78 00 00
+R14=0x000078fda0cfe898 is pointing into the stack for thread: 0x000078fd080080a0
+R15=0x000078fd080080a0 is a thread
+
+Top of Stack: (sp=0x000078fda0cfe4c0)
+0x000078fda0cfe4c0:   000078fda0cfe4f0 0000000000000083
+0x000078fda0cfe4d0:   000078fda0cfe5a0 13c07391a6371300
+0x000078fda0cfe4e0:   
