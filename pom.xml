@@ -115,17 +115,36 @@
             <artifactId>quarkus-container-image-jib</artifactId>
         </dependency>
         <!--Dependencies per riconoscimento immagini-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.microsoft.onnxruntime</groupId>-->
+        <!--            <artifactId>onnxruntime</artifactId>-->
+        <!--            <version>1.22.0</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; (Opzionale) ImageIO utility &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.commons</groupId>-->
+        <!--            <artifactId>commons-imaging</artifactId>-->
+        <!--            <version>1.0-alpha3</version>-->
+        <!--        </dependency>-->
+        <!-- OpenCV wrapper -->
         <dependency>
-            <groupId>com.microsoft.onnxruntime</groupId>
-            <artifactId>onnxruntime</artifactId>
-            <version>1.22.0</version>
+            <groupId>org.openpnp</groupId>
+            <artifactId>opencv</artifactId>
+            <version>4.9.0-0</version>
         </dependency>
-        <!-- (Opzionale) ImageIO utility -->
+        <!-- (facoltativo) Per log/debug immagini -->
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-imaging</artifactId>
-            <version>1.0-alpha3</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>nu.pattern</groupId>-->
+        <!--            <artifactId>opencv</artifactId>-->
+        <!--            <version>2.4.9-7</version>-->
+        <!--        </dependency>-->
+
+
     </dependencies>
 
     <build>
