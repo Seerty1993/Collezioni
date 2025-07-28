@@ -16,7 +16,7 @@ import org.progetto.services.TipoBeybladePunteService;
 @Path("/api/v1/tipoPunte")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Tag(name = "API Tipo Punte")
+@Tag(name = "Beyblade - API Tipo Punte")
 @Slf4j
 public class TipoBeybladePunteResource {
 
@@ -53,7 +53,7 @@ public class TipoBeybladePunteResource {
     @PUT
     @Path("{id}")
     @Operation(summary = "Update Punte", description = "API per l'update delle punte")
-    public ResponseEntity<Void> updateTipoBeybladePunte(@PathParam("id") Long id, TipoBeybladePunteRequestDTO request){
+    public ResponseEntity<Void> updateTipoBeybladePunte(@PathParam("id") Long id, TipoBeybladePunteRequestDTO request) {
         log.info("TipoBeybladePunteResource - updateTipoBeybladePunte");
         tipoBeybladePunteService.updateTipoBeybladePunte(id, request);
         return new ResponseEntity<Void>().addMessage("Punte inserite con successo!");

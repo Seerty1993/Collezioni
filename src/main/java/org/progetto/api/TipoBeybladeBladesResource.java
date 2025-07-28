@@ -16,7 +16,7 @@ import org.progetto.services.TipoBeybladeBladesService;
 @Path("/api/v1/tipoBlades")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Tag(name = "API Tipo Blades")
+@Tag(name = "Beyblade - API Tipo Blades")
 @Slf4j
 public class TipoBeybladeBladesResource {
 
@@ -25,7 +25,7 @@ public class TipoBeybladeBladesResource {
 
     @POST
     @Operation(summary = "Insert Blades", description = "API per l'inserimento delle blades")
-    public ResponseEntity<Void> insertBeybladeBlades(TipoBeybladeBladesRequestDTO request){
+    public ResponseEntity<Void> insertBeybladeBlades(TipoBeybladeBladesRequestDTO request) {
         log.info("TipoBeybladeBladesResource - insertBeybladeBlades");
         tipoBeybladeBladesService.insertBeybladeBlades(request);
         return new ResponseEntity<Void>().addMessage("Blades inserite con successo");
@@ -35,7 +35,7 @@ public class TipoBeybladeBladesResource {
     @GET
     @Path("{id}")
     @Operation(summary = "Get Blades by id", description = "API per la restituzione di una blade tramite id")
-    public TipoBeybladeBladesResultDTO findTipoBladesDetails(@PathParam("id") Long id){
+    public TipoBeybladeBladesResultDTO findTipoBladesDetails(@PathParam("id") Long id) {
         log.info("TipoBeybladeBladesResource - findTipoBladesDetails");
         return tipoBeybladeBladesService.findTipoBladesDetails(id);
     }

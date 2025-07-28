@@ -15,7 +15,7 @@ import org.progetto.services.TipoBeybladeRatchetService;
 @Path("/api/v1/tipoRatchet")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Tag(name = "API Tipo Ratchet")
+@Tag(name = "Beyblade - API Tipo Ratchet")
 @Slf4j
 public class TipoBeybladeRatchetResource {
 

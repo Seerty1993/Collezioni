@@ -1,0 +1,157 @@
+{
+  "BX-01" : {
+    "Name" : "Starter DranSword 3-60F",
+    "Release Date" : "June 10th, 2023 (CoroCoro Spirit Festival)",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-02" : {
+    "Name" : "Starter HellsScythe 4-60T",
+    "Release Date" : "June 10th, 2023 (CoroCoro Spirit Festival)",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-03" : {
+    "Name" : "Starter WizardArrow 4-80B",
+    "Release Date" : "July 15th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-04" : {
+    "Name" : "Starter KnightShield 3-80N",
+    "Release Date" : "July 15th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-05" : {
+    "Name" : "Booster WizardArrow 4-80B",
+    "Release Date" : "July 15th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-06" : {
+    "Name" : "Booster KnightShield 3-80N",
+    "Release Date" : "July 15th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-13" : {
+    "Name" : "Booster KnightLance 4-80HN",
+    "Release Date" : "August 10th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-15" : {
+    "Name" : "Starter LeonClaw 5-60P",
+    "Release Date" : "October 7th, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-19" : {
+    "Name" : "Booster RhinoHorn 3-80S",
+    "Release Date" : "November 2nd, 2023",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-23" : {
+    "Name" : "Starter PhoenixWing 9-60GF",
+    "Release Date" : "December 10th, 2023 (Toys R' Us pre-sale)",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-26" : {
+    "Name" : "Booster UnicornSting 5-60GP",
+    "Release Date" : "January 27th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-33" : {
+    "Name" : "Booster WeissTiger 3-60U",
+    "Release Date" : "June 15th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-34" : {
+    "Name" : "Starter CobaltDragoon 2-60C",
+    "Release Date" : "July 13th, 2024",
+    "Spin Direction" : "Left-Spin"
+  },
+  "BX-38" : {
+    "Name" : "Booster CrimsonGaruda 4-70TP",
+    "Release Date" : "November 2nd, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-44" : {
+    "Name" : "Booster TriceraPress M-85BS",
+    "Release Date" : "June 28th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-45" : {
+    "Name" : "Booster SamuraiCalibur 6-70M",
+    "Release Date" : "August 9th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-01" : {
+    "Name" : "Starter DranBuster 1-60A",
+    "Release Date" : "March 30th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-02" : {
+    "Name" : "Starter HellsHammer 3-70H",
+    "Release Date" : "March 30th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-03" : {
+    "Name" : "Booster WizardRod 5-70DB",
+    "Release Date" : "March 30th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-06" : {
+    "Name" : "Booster LeonCrest 7-60GN",
+    "Release Date" : "August 10th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-08" : {
+    "Name" : "Starter SilverWolf 3-80FB",
+    "Release Date" : "October 12th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-09" : {
+    "Name" : "Starter SamuraiSaber 2-70L",
+    "Release Date" : "November 2nd, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-11" : {
+    "Name" : "Starter ImpactDrake 9-60LR",
+    "Release Date" : "December 28th, 2024",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-13" : {
+    "Name" : "Booster GolemRock 1-60UN",
+    "Release Date" : "January 25th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-14" : {
+    "Name" : "Starter ScorpioSpear 0-70Z",
+    "Release Date" : "April 26th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "CX-01" : {
+    "Name" : "Starter DranBrave S6-60V",
+    "Release Date" : "March 29th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "CX-02" : {
+    "Name" : "Starter WizardArc R4-55LO",
+    "Release Date" : "March 29th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "CX-03" : {
+    "Name" : "Booster PerseusDark B6-80W",
+    "Release Date" : "March 29th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "CX-07" : {
+    "Name" : "Starter PegasusBlast ATr",
+    "Release Date" : "July 19th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "BX-00" : {
+    "Name" : "Booster Rock Leone 6-80GN",
+    "Release Date" : "July 19th, 2025",
+    "Spin Direction" : "Right-Spin"
+  },
+  "UX-00" : {
+    "Name" : "Booster AeroPegasus 3-70A",
+    "Release Date" : "July 30th, 2024 (Rare Bey Get Battle)",
+    "Spin Direction" : "Right-Spin"
+  }
+}
