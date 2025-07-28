@@ -93,14 +93,14 @@ public class BeybladeScraperService {
                         String name = cols.get(1).text().trim();
                         String date = cols.get(2).text().trim();
 
-                        String spin = fetchExtraInfo(normalize(name));
-                        if (spin.equals("N/A")) {
-                            continue;// o name, se preferisci
+                        Map<String, String> spin = fetchExtraInfo(normalize(name));
+                        if (spin == null) {
+                            continue; // Salta se uno dei campi manca
                         }
                         Map<String, String> entry = new LinkedHashMap<>();
                         entry.put("Name", name);
                         entry.put("Release Date", date);
-                        entry.put("Spin Direction", spin);
+                        entry.putAll(spin);
                         output.put(code, entry);
                         log.info("SONO QUA" + name + spin);
                     }
@@ -121,9 +121,10 @@ public class BeybladeScraperService {
         }
     }
 
-    private String fetchExtraInfo(String code) {
+    private Map<String, String> fetchExtraInfo(String code) {
+        Map<String, String> extraFields = new LinkedHashMap<>();
+
         try {
-            // Costruisci l'URL dinamicamente, se serve
             String url = "https://beyblade.fandom.com/" + URLEncoder.encode(code, StandardCharsets.UTF_8);
             Document doc = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0 (compatible; QuarkusScraper/1.0)")
@@ -131,21 +132,37 @@ public class BeybladeScraperService {
                     .get();
 
             Elements rows = doc.select(".portable-infobox .pi-item");
+
+            Map<String, String> fieldsToExtract = new LinkedHashMap<>();
+            fieldsToExtract.put("Spin Direction", null);
+            fieldsToExtract.put("Blade", null);
+            fieldsToExtract.put("Ratchet", null);
+            fieldsToExtract.put("Bit", null);
             for (Element row : rows) {
                 Element label = row.selectFirst(".pi-data-label");
-                if (label != null && label.text().trim().equalsIgnoreCase("Spin Direction")) {
-                    Element value = row.selectFirst(".pi-data-value");
-                    if (value != null) {
-                        return value.text().trim();
+                Element value = row.selectFirst(".pi-data-value");
+
+                if (label != null && value != null) {
+                    String labelText = label.text().trim();
+                    for (String key : fieldsToExtract.keySet()) {
+                        if (labelText.equalsIgnoreCase(key)) {
+                            fieldsToExtract.put(key, value.text().trim());
+                        }
                     }
                 }
             }
-            return "N/A";
+
+            // Verifica se tutti i campi sono stati trovati
+            if (fieldsToExtract.values().stream().anyMatch(v -> v == null)) {
+                return null; // Campo mancante → scarta l'oggetto
+            }
+
+            // Ritorna i campi trovati
+            return fieldsToExtract;
         } catch (Exception e) {
             System.err.println("Errore nel recuperare info per " + code + ": " + e.getMessage());
-            return "N/A";
+            return null;
         }
-
     }
 }
 
